@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 function Boost() {
   return (
-    <div>
+    <section>
       <h2>Boost your links today</h2>
 
       <button>Get Started</button>
 
-    </div>
+    </section>
   );
 }
 
