@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as WorkingImage } from '../images/illustration-working.svg';
+import ButtonRounded from '../components/button-rounded';
 
 function Splash() {
   return (
@@ -9,7 +10,7 @@ function Splash() {
     
       <p>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
 
-      <button>Get Started</button>
+      <ButtonRounded text="Get Started">Get Started</ButtonRounded>
 
       <WorkingImage />
       
