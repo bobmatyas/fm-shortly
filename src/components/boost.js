@@ -7,6 +7,7 @@ import ButtonRounded from '../components/button-rounded';
 const BoostSection = styled.section`
   background-color: hsl(257, 27%, 26%); 
   background-image: url(${MobileBackgroundImage});
+  background-position: top right;
   background-repeat: no-repeat;
   padding: 8% 5%;
   text-align: center;

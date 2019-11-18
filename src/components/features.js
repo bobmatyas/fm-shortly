@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import FeatureCard from './feature-card';
 import FeatureSpacer from './feature-spacer';
+import Shortener from './shortener';
+
 
 const FeaturesSection = styled.section`
   background-color: hsl(230, 2%, 96%);
@@ -28,6 +30,8 @@ const FeaturesText = styled.p`
 function Features() {
   return (
     <FeaturesSection>
+
+      <Shortener />
 
       <FeaturesHeader>Advanced Statistics</FeaturesHeader>
 
