@@ -14,13 +14,13 @@ const BoostSection = styled.section`
 
 const BoostHeader = styled.h2`
   color: #fff;
-  font-size: 2.9rem;
-  margin: 7rem auto 0 auto;
+  font-size: 2.6rem;
+  margin: 8rem auto 0 auto;
   text-align: center;
 `;
 
 const ButtonHolder = styled.div`
-  margin-bottom: 7rem;
+  margin-bottom: 6.8rem;
 `;
 
 function Boost() {
