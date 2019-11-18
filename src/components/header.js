@@ -1,9 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../images/logo.svg';
+import Menu from './menu';
 
 const StyledHeader = styled.header`
-  background-color: #eee;
+  align-items: center;
+  color: hsl(260, 8%, 14%);
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+`;
+
+const MenuButton = styled.button`
+  cursor: pointer;
+  margin: 0;
 `;
 
 
@@ -13,6 +23,9 @@ function Header() {
       <h1>
         <Logo />
       </h1>
+      <Menu />
+      <MenuButton>Menu</MenuButton>
+      
     </StyledHeader>
   );
 }
