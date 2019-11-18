@@ -10,11 +10,11 @@ const IconList = styled.ul`
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin: 0 auto;
+  margin: 5rem auto 0 auto;
   padding: 0;
 
   li {
-    margin: 15px;
+    margin: 0 1.5rem;
   }
 `;
 

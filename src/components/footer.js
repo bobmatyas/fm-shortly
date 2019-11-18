@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ReactComponent as Logo } from '../images/logo.svg';
 import SocialList from '../components/social-list';
 
-const fontSize = 1.8;
+const fontSize = 1.6;
 
 const StyledFooter = styled.footer`
   background-color: hsl(260, 8%, 14%);
@@ -11,37 +12,53 @@ const StyledFooter = styled.footer`
   text-align: center;
 `;
 
+const LogoHolder = styled.div`
+  color: #fff;
+  margin: 5.5rem 0;
+`;
+
 const List = styled.ul`
   font-size: ${fontSize}rem;
   color: hsl(0, 0%, 75%);
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 2.2rem 0;
   padding: 0;
 
   li {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
   }
 `;
 
 const FooterHeader = styled.h3`
   font-size: ${fontSize}rem;
   color: #fff;
-  margin: 4rem auto;
-  padding: 0;
+  margin: 0
+  padding: 3rem 0 1.5rem 0;
   text-align: center;
 `;
 
 const Attribution = styled.div`
+  color: #fff;
   font-size: 11px; 
-  margin: 50px auto;
+  margin: 5rem auto;
   text-align: center;
 
-  a { color: hsl(228, 45%, 44%); }
+  a { 
+    color: #fff; 
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
 `;
 
 function Footer() {
   return (
     <StyledFooter>
+
+      <LogoHolder>
+        <Logo />
+      </LogoHolder>
 
       <FooterHeader>Features</FooterHeader>
 
