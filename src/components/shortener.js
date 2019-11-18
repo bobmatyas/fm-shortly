@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MobileBackgroundImage from '../images/bg-shorten-mobile.svg';
+import ShortenerResult from './shortener-result';
 
 const ShortenerHolder = styled.div`
   background-color: hsl(257, 27%, 26%);
@@ -49,16 +50,23 @@ const ShortenerButton = styled.button`
 function Shortener() {
   
   return (
-    <ShortenerHolder>
-      <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
-      <ShortenerInput 
-        id="shortenerUrl"
-        type="text"
-        placeholder="Shorten a link here..."
+    <>
+      <ShortenerHolder>
+        <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
+        <ShortenerInput 
+          id="shortenerUrl"
+          type="text"
+          placeholder="Shorten a link here..."
+        />
+        <br />
+        <ShortenerButton>Shorten It!</ShortenerButton>
+      </ShortenerHolder>
+
+      <ShortenerResult 
+        originalUrl='https://www.cnn.com'
+        shortenedUrl='https://rel.ink/23dsa2'
       />
-      <br />
-      <ShortenerButton>Shorten It!</ShortenerButton>
-    </ShortenerHolder>
+    </>
   );
 }
 
