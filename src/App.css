@@ -13,3 +13,12 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.visible {
+  display: block !important;
+}
+
+.alert {
+  color: hsl(0, 87%, 67%) !important;
+  border: 1px solid hsl(0, 87%, 67%);;
+}
