@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import MobileBackgroundImage from '../images/bg-shorten-mobile.svg';
 import ShortenerResult from './shortener-result';
 
@@ -9,7 +10,7 @@ const ShortenerHolder = styled.div`
   background-position: top right;
   background-repeat: no-repeat;
   border-radius: 10px;
-  margin: -160px auto 100px auto;
+  margin: -160px auto 1.5rem auto;
   padding: 2rem 0;
   text-align: center;
 `;
@@ -49,23 +50,55 @@ const ShortenerButton = styled.button`
 
 function Shortener() {
   
+
+  const [links, setLinks] = useState([]);
+
+  const getShortLink = (url) => {
+    axios({
+      method: 'post',
+      url: 'https://rel.ink/api/links/',
+      data: {
+        url: url
+      }
+    })
+    .then(function (response) {
+      const newLink = {
+        'originalUrl': response.data.url,
+        'newUrl': `http://rel.ink/${response.data.hashid}`,
+      };
+      setLinks([...links, newLink]);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
+  useEffect(() => {  
+  
+  });
+
   return (
     <>
       <ShortenerHolder>
         <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
+
         <ShortenerInput 
           id="shortenerUrl"
           type="text"
           placeholder="Shorten a link here..."
         />
         <br />
-        <ShortenerButton>Shorten It!</ShortenerButton>
+        <ShortenerButton onClick={() => getShortLink('https://www.aol.com')}>Shorten It!</ShortenerButton>
       </ShortenerHolder>
 
-      <ShortenerResult 
-        originalUrl='https://www.cnn.com'
-        shortenedUrl='https://rel.ink/23dsa2'
-      />
+      {links.map((link, index) => (
+        <ShortenerResult 
+          key= {index}
+          originalUrl= {link.originalUrl}
+          shortenedUrl= {link.newUrl}
+        />
+      ))}
     </>
   );
 }

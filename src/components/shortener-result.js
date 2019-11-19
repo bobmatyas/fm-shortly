@@ -7,6 +7,7 @@ const fontSize = 1.6;
 const ShortenedLinkBox = styled.div`
   background-color: #fff;
   border-radius: 5px;
+  margin: 1rem auto;
 `;
 
 const OriginalLink = styled.p`
