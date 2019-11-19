@@ -39,6 +39,7 @@ const ShortenerInput = styled.input`
 
 const ShortenerButton = styled.button`
   background-color: hsl(180, 66%, 49%);
+  border: none;
   border-radius: 5px;
   color: #fff;
   font-family: 'Poppins', sans-serif;
@@ -47,6 +48,15 @@ const ShortenerButton = styled.button`
   margin: 1rem;
   padding: 0.8rem;
   width: 80%;
+
+  :active {
+    transform: translateY(4px);
+  }
+
+  :hover {
+    background-color: #9be3e2;
+    cursor: pointer;
+  }
 `;
 
 const ErrorMessageDisplay = styled.p`

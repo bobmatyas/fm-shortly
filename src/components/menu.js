@@ -46,7 +46,13 @@ const SignUpButton = styled.button`
   :active {
     transform: translateY(4px);
   }
-  `;
+
+  :hover {
+    background-color: #9be3e2;
+    cursor: pointer;
+  }
+
+`;
 
 const MenuButton = styled.button`
   background-color: #fff;

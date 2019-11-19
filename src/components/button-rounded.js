@@ -12,9 +12,15 @@ const Button = styled.button`
   padding: 1.5rem 2.8rem;
   text-align: center;
 
+  :active {
+    transform: translateY(4px);
+  }
+
   :hover {
+    background-color: #9be3e2;
     cursor: pointer;
   }
+  
 `;
 
 function ButtonRounded(props) {
