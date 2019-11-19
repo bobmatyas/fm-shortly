@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import MobileBackgroundImage from '../images/bg-shorten-mobile.svg';
@@ -53,6 +53,25 @@ function Shortener() {
 
   const [links, setLinks] = useState([]);
 
+  const [input, setInput] = useState('');
+
+  const validateUrl = (url) => {
+    return /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(url);
+  }
+
+  const checkLink = (e) => {
+    e.preventDefault();
+    console.log(input);
+    console.log(`checkLink called`);
+    if (validateUrl(input) === true) {
+      console.log('valid url');
+      getShortLink(input);
+    } else {
+      console.log('invalid url');
+    }
+    
+  }
+
   const getShortLink = (url) => {
     axios({
       method: 'post',
@@ -67,6 +86,7 @@ function Shortener() {
         'newUrl': `http://rel.ink/${response.data.hashid}`,
       };
       setLinks([...links, newLink]);
+      setInput('');
     })
     .catch(function (error) {
       console.log(error);
@@ -81,15 +101,19 @@ function Shortener() {
   return (
     <>
       <ShortenerHolder>
+        <form onSubmit={checkLink }>
         <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
 
-        <ShortenerInput 
+        <ShortenerInput
+          value={input} 
+          onChange={e => setInput(e.target.value)}
           id="shortenerUrl"
           type="text"
           placeholder="Shorten a link here..."
         />
         <br />
-        <ShortenerButton onClick={() => getShortLink('https://www.aol.com')}>Shorten It!</ShortenerButton>
+        <ShortenerButton type="submit">Shorten It!</ShortenerButton>
+        </form>
       </ShortenerHolder>
 
       {links.map((link, index) => (
