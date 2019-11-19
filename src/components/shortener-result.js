@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 
@@ -18,7 +18,9 @@ const OriginalLink = styled.p`
   padding: 15px 15px 10px 15px;
 `;
 
-const ShortenedLink = styled.p`
+const ShortenedLink = styled.input`
+  background-color: #fff;
+  border: none;
   color: hsl(180, 66%, 49%);
   font-size: ${fontSize}rem;
   margin: 0;
@@ -46,12 +48,22 @@ const CopyLinkButton = styled.button`
 
 function ShortenerResult({ originalUrl, shortenedUrl }) {
   
+  const [copySuccess, setCopySuccess] = useState('Copy');
+  const shortenedRef = useRef(null);
+
+  function copyToClipboard(e) {
+    shortenedRef.current.select();
+    document.execCommand('copy');
+    e.target.focus();
+    setCopySuccess('Copied!');
+  };
+
   return (
     <ShortenedLinkBox>
       <OriginalLink>{ originalUrl }</OriginalLink>
-      <ShortenedLink>{ shortenedUrl }</ShortenedLink>
+      <ShortenedLink ref={shortenedRef} readOnly value={shortenedUrl} disabled></ShortenedLink>
       <CopyLinkButtonHolder>
-        <CopyLinkButton>Copy</CopyLinkButton>
+        <CopyLinkButton onClick={copyToClipboard}>{copySuccess}</CopyLinkButton>
       </CopyLinkButtonHolder>
     </ShortenedLinkBox> 
   );
