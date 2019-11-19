@@ -27,6 +27,7 @@ const ShortenerLabel = styled.label`
 `;
 
 const ShortenerInput = styled.input`
+  border: none;
   border-radius: 5px;
   color: hsl(0, 0%, 75%);
   font-family: 'Poppins', sans-serif;

@@ -11,20 +11,18 @@ const StyledHeader = styled.header`
   padding: 5%;
 `;
 
-const MenuButton = styled.button`
-  cursor: pointer;
+const LogoHolder = styled.h1`
   margin: 0;
 `;
-
 
 function Header() {
   return (
     <StyledHeader>
-      <h1>
+      <LogoHolder>
         <Logo />
-      </h1>
-      <Menu />
-      <MenuButton>Menu</MenuButton>
+      </LogoHolder>
+
+      <Menu /> 
       
     </StyledHeader>
   );
