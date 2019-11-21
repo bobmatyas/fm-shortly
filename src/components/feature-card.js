@@ -76,8 +76,6 @@ function FeatureCard({ icon, title, text, styleByPosition }) {
     }
   }
 
-  console.log(styleByPosition);
-
   return (
     <Card className={styleByPosition}>
       <CardIcon>{ getIcon(icon) }</CardIcon>
