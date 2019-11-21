@@ -11,11 +11,11 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   max-width: 1034px;
-  padding: 5%;
+  padding: 2% 5%;
 
   @media only screen and (min-width: 1160px) { 
     margin: 0 auto;
-    padding: 5% 0;
+    padding: 2% 0;
   }
 
 `;

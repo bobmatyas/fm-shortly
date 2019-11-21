@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from '../images/logo.svg';
 import SocialList from '../components/social-list';
 
 const fontSize = 1.6;
+const desktopSize = `900px`;
 
 const StyledFooter = styled.footer`
   background-color: hsl(260, 8%, 14%);
@@ -20,7 +21,7 @@ const FooterInfo = styled.div`
   margin: 0 auto;
   max-width: 1034px;
 
-  @media only screen and (min-width: 800px) { 
+  @media only screen and (min-width: ${desktopSize}) { 
     align-items: flex-start;
     flex-direction: row;
   }
@@ -30,7 +31,7 @@ const LogoHolder = styled.div`
   color: #fff;
   margin: 5.5rem 0;
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: ${desktopSize}) {
     margin: 0;
   }
 `;
@@ -55,7 +56,7 @@ const List = styled.ul`
     }
   }
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: ${desktopSize}) {
     margin: 0;
     text-align: left;
   }
@@ -68,14 +69,14 @@ const FooterHeader = styled.h3`
   padding: 3rem 0 1.5rem 0;
   text-align: center;
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: ${desktopSize}) {
     padding: 0 0 1.5rem 0;
     text-align: left;
   }
 `;
 
 const FooterMenus = styled.div`
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: ${desktopSize}) {
     display: flex;
     justify-content: space-around;
     width: 75%;

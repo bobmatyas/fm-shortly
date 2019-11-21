@@ -71,6 +71,7 @@ const SplashPicture = styled.div`
   background-repeat: no-repeat;
   background-size: 125%;
   height: 400px;
+  margin-left: 5%;
 
   @media only screen and (min-width: 500px) {
     background-size: 115%;

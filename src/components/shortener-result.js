@@ -7,7 +7,6 @@ const desktopSize = `700px`;
 
 
 const ShortenedLinkBox = styled.div`
-  align-items: center;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
@@ -16,6 +15,7 @@ const ShortenedLinkBox = styled.div`
   max-width: 1034px;
 
   @media only screen and (min-width: ${desktopSize}) {
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
     margin: 10px auto;
