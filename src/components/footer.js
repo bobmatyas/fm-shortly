@@ -44,6 +44,15 @@ const List = styled.ul`
 
   li {
     margin: 1.5rem 0;
+    
+    a:link, a:visited {
+      color: hsl(0, 0%, 75%);
+      text-decoration: none;
+    }
+
+    a:hover, a:active {
+      color: #9be3e2;
+    }
   }
 
   @media only screen and (min-width: 800px) {
@@ -103,9 +112,9 @@ function Footer() {
             <FooterHeader>Features</FooterHeader>
 
             <List>
-              <li>Link Shortening</li>
-              <li>Branded Links</li>
-              <li>Analytics</li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Link Shortening</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Branded Links</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Analytics</a></li>
             </List>
           </div>
 
@@ -113,9 +122,9 @@ function Footer() {
             <FooterHeader>Resources</FooterHeader>
 
             <List>
-              <li>Blog</li>
-              <li>Developers</li>
-              <li>Support</li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Blog</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Developers</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Support</a></li>
             </List>
           </div>
 
@@ -123,10 +132,10 @@ function Footer() {
             <FooterHeader>Company</FooterHeader>
 
             <List>
-              <li>About</li>
-              <li>Our Team</li>
-              <li>Careers</li>
-              <li>Contact</li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">About</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Our Team</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Careers</a></li>
+              <li><a href="https://bobmatyas.github.io/fm-shortly">Contact</a></li>
             </List>
           </div>
 
