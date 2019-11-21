@@ -22,3 +22,7 @@ body {
   color: hsl(0, 87%, 67%) !important;
   border: 2px solid hsl(0, 87%, 67%) !important;
 }
+
+.copied {
+  background-color: hsl(257, 27%, 26%) !important;
+}
