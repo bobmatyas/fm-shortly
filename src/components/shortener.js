@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import MobileBackgroundImage from '../images/bg-shorten-mobile.svg';
+import DesktopBackgroundImage from '../images/bg-shorten-desktop.svg';
 import ShortenerResult from './shortener-result';
+
+const desktopSize = `700px`;
 
 const ShortenerHolder = styled.div`
   background-color: hsl(257, 27%, 26%);
@@ -10,9 +13,44 @@ const ShortenerHolder = styled.div`
   background-position: top right;
   background-repeat: no-repeat;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: -160px auto 1.5rem auto;
   padding: 2rem 0;
   text-align: center;
+  
+  @media only screen and (min-width: ${desktopSize}) {
+    background-image: url(${DesktopBackgroundImage});
+    height: 168px;
+  }
+`;
+
+const ShortenerForm = styled.form`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    align-items: top;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5%;
+  }
+
+`;
+
+const ShortenerFieldHolder = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    height: 50px;
+  }
 `;
 
 const ShortenerLabel = styled.label`
@@ -35,6 +73,25 @@ const ShortenerInput = styled.input`
   margin: 1rem;
   padding: 0.8rem;
   width: 80%;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    margin: 0;
+    width: 100%;
+  }
+
+`;
+
+const ShortenerButtonHolder = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    height: 50px;
+    margin: 0;
+    width: 35%;
+  }
+
 `;
 
 const ShortenerButton = styled.button`
@@ -57,6 +114,12 @@ const ShortenerButton = styled.button`
     background-color: #9be3e2;
     cursor: pointer;
   }
+
+  @media only screen and (min-width: ${desktopSize}) {
+    margin: 0;
+  }
+
+
 `;
 
 const ErrorMessageDisplay = styled.p`
@@ -64,13 +127,18 @@ const ErrorMessageDisplay = styled.p`
   display: none;
   font-size: 1.6rem;
   font-style: italic;
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 10%;
   text-align: left;
   width: 80%;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    margin: 1rem 0 0 0;
+  }
+
 `;
 
 function Shortener() {
-  
+
 
   const [links, setLinks] = useState([]);
 
@@ -93,8 +161,8 @@ function Shortener() {
     } else {
       error.current.classList.add('visible');
       shortenInput.current.classList.add('alert');
-      error.current.textContent = 'Please enter a valid link...'     
-    }  
+      error.current.textContent = 'Please enter a valid link...'
+    }
   }
 
   const getShortLink = (url) => {
@@ -105,51 +173,54 @@ function Shortener() {
         url: url
       }
     })
-    .then(function (response) {
-      const newLink = {
-        'originalUrl': response.data.url,
-        'newUrl': `http://rel.ink/${response.data.hashid}`,
-      };
-      setLinks([...links, newLink]);
-      setInput('');
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        const newLink = {
+          'originalUrl': response.data.url,
+          'newUrl': `http://rel.ink/${response.data.hashid}`,
+        };
+        setLinks([...links, newLink]);
+        setInput('');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
 
-  useEffect(() => {  
-  
+  useEffect(() => {
+
   });
 
   return (
     <>
       <ShortenerHolder>
-        <form onSubmit={checkLink }>
-        <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
+          <ShortenerForm onSubmit={checkLink}>
+            <ShortenerFieldHolder>
+              <ShortenerLabel htmlFor="shortenerUrl">Shorten a link here...</ShortenerLabel>
 
-        <ShortenerInput
-          value={input} 
-          ref={shortenInput}
-          onChange={e => setInput(e.target.value)}
-          id="shortenerUrl"
-          type="text"
-          placeholder="Shorten a link here..."
-        />
-        <ErrorMessageDisplay
-          ref={error}
-        />
-        <br />
-        <ShortenerButton type="submit">Shorten It!</ShortenerButton>
-        </form>
+            <ShortenerInput
+              value={input}
+              ref={shortenInput}
+              onChange={e => setInput(e.target.value)}
+              id="shortenerUrl"
+              type="text"
+              placeholder="Shorten a link here..."
+            />
+            <ErrorMessageDisplay
+              ref={error}
+            />
+            </ShortenerFieldHolder>
+            <ShortenerButtonHolder>
+              <ShortenerButton type="submit">Shorten It!</ShortenerButton>
+            </ShortenerButtonHolder>
+          </ShortenerForm>
       </ShortenerHolder>
 
       {links.map((link, index) => (
-        <ShortenerResult 
-          key= {index}
-          originalUrl= {link.originalUrl}
-          shortenedUrl= {link.newUrl}
+        <ShortenerResult
+          key={index}
+          originalUrl={link.originalUrl}
+          shortenedUrl={link.newUrl}
         />
       ))}
     </>
