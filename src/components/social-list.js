@@ -7,6 +7,7 @@ import { ReactComponent as IconInstagram } from '../images/icon-instagram.svg';
 
 const IconList = styled.ul`
   align-items: center;
+  color: #fff;
   display: flex;
   justify-content: center;
   list-style-type: none;
@@ -16,6 +17,18 @@ const IconList = styled.ul`
   li {
     margin: 0 1.5rem;
   }
+
+  svg :hover {
+    color: #9be3e2;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 800px) {
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
 `;
 
 function SocialList() {

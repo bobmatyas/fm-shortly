@@ -12,9 +12,27 @@ const StyledFooter = styled.footer`
   text-align: center;
 `;
 
+const FooterInfo = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1034px;
+
+  @media only screen and (min-width: 800px) { 
+    align-items: flex-start;
+    flex-direction: row;
+  }
+`;
+
 const LogoHolder = styled.div`
   color: #fff;
   margin: 5.5rem 0;
+
+  @media only screen and (min-width: 800px) {
+    margin: 0;
+  }
 `;
 
 const List = styled.ul`
@@ -27,6 +45,11 @@ const List = styled.ul`
   li {
     margin: 1.5rem 0;
   }
+
+  @media only screen and (min-width: 800px) {
+    margin: 0;
+    text-align: left;
+  }
 `;
 
 const FooterHeader = styled.h3`
@@ -35,6 +58,19 @@ const FooterHeader = styled.h3`
   margin: 0
   padding: 3rem 0 1.5rem 0;
   text-align: center;
+
+  @media only screen and (min-width: 800px) {
+    padding: 0 0 1.5rem 0;
+    text-align: left;
+  }
+`;
+
+const FooterMenus = styled.div`
+  @media only screen and (min-width: 800px) {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+  }
 `;
 
 const Attribution = styled.div`
@@ -56,38 +92,49 @@ function Footer() {
   return (
     <StyledFooter>
 
-      <LogoHolder>
-        <Logo />
-      </LogoHolder>
+      <FooterInfo>
 
-      <FooterHeader>Features</FooterHeader>
+        <LogoHolder>
+          <Logo />
+        </LogoHolder>
 
-      <List>
-        <li>Link Shortening</li>
-        <li>Branded Links</li>
-        <li>Analytics</li>
-      </List>
+        <FooterMenus>
+          <div>
+            <FooterHeader>Features</FooterHeader>
 
+            <List>
+              <li>Link Shortening</li>
+              <li>Branded Links</li>
+              <li>Analytics</li>
+            </List>
+          </div>
 
-      <FooterHeader>Resources</FooterHeader>
+          <div>
+            <FooterHeader>Resources</FooterHeader>
 
-      <List>
-        <li>Blog</li>
-        <li>Developers</li>
-        <li>Support</li>
-      </List>
+            <List>
+              <li>Blog</li>
+              <li>Developers</li>
+              <li>Support</li>
+            </List>
+          </div>
 
-      <FooterHeader>Company</FooterHeader>
+          <div>
+            <FooterHeader>Company</FooterHeader>
 
-      <List>
-        <li>About</li>
-        <li>Our Team</li>
-        <li>Careers</li>
-        <li>Contact</li>
-      </List>
- 
+            <List>
+              <li>About</li>
+              <li>Our Team</li>
+              <li>Careers</li>
+              <li>Contact</li>
+            </List>
+          </div>
 
-      <SocialList />
+          <SocialList />
+
+        </FooterMenus>
+
+      </FooterInfo>
 
       <Attribution>
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.<br />

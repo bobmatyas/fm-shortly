@@ -19,7 +19,7 @@ const FeaturesHeader = styled.h2`
   letter-spacing: -2px;
   text-align: center;
 
-  @media only screen and (min-width: ${desktopSize}) {
+  @media only screen and (min-width: 500px) {
     font-size: 4.2rem;
     margin: 100px auto 1.5rem auto;
   }
@@ -33,7 +33,7 @@ const FeaturesText = styled.p`
   margin: 0 0 8.2rem 0;
   text-align: center;
 
-  @media only screen and (min-width: ${desktopSize}) {
+  @media only screen and (min-width: 500px) {
     font-size: 1.8rem;
     max-width: 525px;
     margin: 0 auto;
