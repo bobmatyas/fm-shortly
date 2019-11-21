@@ -4,13 +4,21 @@ import { ReactComponent as IconBrand } from './../images/icon-brand-recognition.
 import { ReactComponent as IconDetailed } from './../images/icon-detailed-records.svg';
 import { ReactComponent as IconFully } from './../images/icon-fully-customizable.svg';
 
+const desktopSize = `1034px`;
 
 const Card = styled.div`
   background-color: #fff;
   border-radius: 5px;
   margin: 0 auto;
   max-width: 325px
-  padding: 5% 7%;
+  padding: 45px;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    margin: 0;
+    width: 350px;
+    padding: 35px;
+  }
+
 `;
 
 const CardIcon = styled.div`
@@ -18,10 +26,14 @@ const CardIcon = styled.div`
   border-radius: 50%;
   height: 90px;
   margin: 0 auto;
-  margin-top: -60px;
+  margin-top: -90px;
   padding: 25px 0;
   text-align: center;
   width: 90px;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    margin: -80px 0 0 0;
+  }
 `;
 
 const CardHeader = styled.h3`
@@ -30,6 +42,11 @@ const CardHeader = styled.h3`
   margin: 2.2rem auto;
   padding: 1rem;
   text-align: center;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    padding: 0;
+    text-align: left;
+  }
 `;
 
 const CardText = styled.p`
@@ -38,9 +55,13 @@ const CardText = styled.p`
   font-weight: 400;
   line-height: 1.6;
   text-align: center;
+
+  @media only screen and (min-width: ${desktopSize}) {
+    text-align: left;
+  }
 `;
 
-function FeatureCard({ icon, title, text }) {
+function FeatureCard({ icon, title, text, styleByPosition }) {
 
   const getIcon = (icon) => {
     switch(icon) {
@@ -55,8 +76,10 @@ function FeatureCard({ icon, title, text }) {
     }
   }
 
+  console.log(styleByPosition);
+
   return (
-    <Card>
+    <Card className={styleByPosition}>
       <CardIcon>{ getIcon(icon) }</CardIcon>
       <CardHeader>{title}</CardHeader>
       <CardText>{text}</CardText>

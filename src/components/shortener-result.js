@@ -13,6 +13,7 @@ const ShortenedLinkBox = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem auto;
+  max-width: 1034px;
 
   @media only screen and (min-width: ${desktopSize}) {
     flex-direction: row;

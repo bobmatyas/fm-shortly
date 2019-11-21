@@ -22,7 +22,10 @@ const ShortenerHolder = styled.div`
   
   @media only screen and (min-width: ${desktopSize}) {
     background-image: url(${DesktopBackgroundImage});
+    background-position: top left;
+    background-size: cover;
     height: 168px;
+    max-width: 1034px;
   }
 `;
 
