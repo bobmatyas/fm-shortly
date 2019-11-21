@@ -16,7 +16,7 @@ const SplashHolder = styled.section`
     justify-content: flex-end;
     margin-bottom: 100px;
     max-width: 1034px;
-    padding: 0 5%;
+    padding: 5% 0 0 5%;
   }
 
   @media only screen and (min-width: 1150px) {
@@ -30,13 +30,19 @@ const SplashHolder = styled.section`
 `;
 
 const SplashText = styled.div`
-  padding: 0 5% 0 0;
+  padding: 0 5%;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 125px;
 
   @media only screen and (min-width: ${DeskTopScreenSize}) { 
+    margin-bottom: 50px;
+    padding: 0 5% 0 0;
     text-align: left;
     width: 50%;
+  }
+
+  @media only screen and (min-width: 900px) {
+    margin-bottom: 150px;
   }
 `;
 
