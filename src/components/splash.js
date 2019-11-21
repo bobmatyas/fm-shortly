@@ -3,16 +3,29 @@ import styled from 'styled-components';
 import WorkingImage from '../images/illustration-working.svg';
 import ButtonRounded from '../components/button-rounded';
 
+
+const DeskTopScreenSize = `700px`;
+
 const SplashHolder = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0 0 0 5%;
+
+  @media only screen and (min-width: ${DeskTopScreenSize}) { 
+    flex-direction: row-reverse;
+    margin-bottom: 100px;
+  }
 `;
 
 const SplashText = styled.div`
   padding: 0 5% 0 0;
   text-align: center;
   margin-bottom: 150px;
+
+  @media only screen and (min-width: ${DeskTopScreenSize}) { 
+    text-align: left;
+    width: 50%;
+  }
 `;
 
 const SplashTextHeader = styled.h2`
@@ -20,20 +33,51 @@ const SplashTextHeader = styled.h2`
   font-size: 4.2rem;
   font-weight: 700;
   margin: 0 auto;
+  max-width: 420px;
   text-align: center;
+
+  @media only screen and (min-width: ${DeskTopScreenSize}) {
+    font-size: 4rem;
+    margin: 1rem 0 0 0;
+    text-align: left;
+  }
+
+  @media only screen and (min-width: 1100px) {
+    font-size: 7rem;
+  }
 `;
 
 const SplashTextTagline = styled.p`
   color: hsl(0, 0%, 75%);
   font-size: 1.8rem;
   line-height: 1.6;
+  max-width: 520px;
 `;
 
 const SplashPicture = styled.div`
   background-image: url(${WorkingImage});
   background-repeat: no-repeat;
   background-size: 125%;
-  height: 338px;
+  height: 400px;
+
+  @media only screen and (min-width: 500px) {
+    background-size: 115%;
+  }
+
+  @media only screen and (min-width: 550px) {
+    background-size: 110%;
+    padding-bottom: 0;
+    height: 475px;
+  }
+
+  @media only screen and (min-width: ${DeskTopScreenSize}) { 
+    background-size: 115%;
+    background-position: 0 5px;
+    padding-bottom: 100px;
+    height: 600px;
+    width: 50%;
+  }
+
 `;
 
 function Splash() {
