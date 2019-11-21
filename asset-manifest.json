@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/fm-shortly/static/css/main.6f18f5ad.chunk.css",
+    "main.js": "/fm-shortly/static/js/main.4dece6aa.chunk.js",
+    "main.js.map": "/fm-shortly/static/js/main.4dece6aa.chunk.js.map",
+    "runtime-main.js": "/fm-shortly/static/js/runtime-main.5d27c742.js",
+    "runtime-main.js.map": "/fm-shortly/static/js/runtime-main.5d27c742.js.map",
+    "static/js/2.ad19cf0f.chunk.js": "/fm-shortly/static/js/2.ad19cf0f.chunk.js",
+    "static/js/2.ad19cf0f.chunk.js.map": "/fm-shortly/static/js/2.ad19cf0f.chunk.js.map",
+    "index.html": "/fm-shortly/index.html",
+    "precache-manifest.8667362cf0453febcafda762308e39b1.js": "/fm-shortly/precache-manifest.8667362cf0453febcafda762308e39b1.js",
+    "service-worker.js": "/fm-shortly/service-worker.js",
+    "static/css/main.6f18f5ad.chunk.css.map": "/fm-shortly/static/css/main.6f18f5ad.chunk.css.map",
+    "static/media/bg-boost-desktop.svg": "/fm-shortly/static/media/bg-boost-desktop.dc8b886b.svg",
+    "static/media/bg-boost-mobile.svg": "/fm-shortly/static/media/bg-boost-mobile.47ef0c28.svg",
+    "static/media/bg-shorten-desktop.svg": "/fm-shortly/static/media/bg-shorten-desktop.a82de60e.svg",
+    "static/media/bg-shorten-mobile.svg": "/fm-shortly/static/media/bg-shorten-mobile.4a7a7f61.svg",
+    "static/media/icon-brand-recognition.1922b68a.svg": "/fm-shortly/static/media/icon-brand-recognition.1922b68a.svg",
+    "static/media/icon-detailed-records.e3d9caa9.svg": "/fm-shortly/static/media/icon-detailed-records.e3d9caa9.svg",
+    "static/media/icon-facebook.8d36318a.svg": "/fm-shortly/static/media/icon-facebook.8d36318a.svg",
+    "static/media/icon-fully-customizable.cc099cea.svg": "/fm-shortly/static/media/icon-fully-customizable.cc099cea.svg",
+    "static/media/icon-instagram.f00517c8.svg": "/fm-shortly/static/media/icon-instagram.f00517c8.svg",
+    "static/media/icon-pinterest.7bfcc413.svg": "/fm-shortly/static/media/icon-pinterest.7bfcc413.svg",
+    "static/media/icon-twitter.ce8e482b.svg": "/fm-shortly/static/media/icon-twitter.ce8e482b.svg",
+    "static/media/illustration-working.svg": "/fm-shortly/static/media/illustration-working.5029d049.svg",
+    "static/media/logo.eb2fe952.svg": "/fm-shortly/static/media/logo.eb2fe952.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d27c742.js",
+    "static/js/2.ad19cf0f.chunk.js",
+    "static/css/main.6f18f5ad.chunk.css",
+    "static/js/main.4dece6aa.chunk.js"
+  ]
+}
