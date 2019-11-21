@@ -7,6 +7,7 @@ const desktopSize = `800px`;
 
 const StyledHeader = styled.header`
   align-items: center;
+  background-color: #fff;
   color: hsl(260, 8%, 14%);
   display: flex;
   justify-content: space-between;

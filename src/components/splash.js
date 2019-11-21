@@ -7,6 +7,7 @@ import ButtonRounded from '../components/button-rounded';
 const DeskTopScreenSize = `700px`;
 
 const SplashHolder = styled.section`
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   padding: 0;
