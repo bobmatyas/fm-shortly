@@ -19,7 +19,7 @@ const ShortenedLinkBox = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin: 10px auto;
-    padding: 2.5%;
+    padding: 1rem 2.5%;
   }
 
 `;
@@ -91,6 +91,7 @@ const CopyLinkButton = styled.button`
   }
 
   @media only screen and (min-width: ${desktopSize}) {
+    min-width: 120px;
     padding: 8px 20px;
     width: 100%;
   }

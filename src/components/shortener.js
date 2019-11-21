@@ -142,8 +142,11 @@ const ErrorMessageDisplay = styled.p`
 
 function Shortener() {
 
+  console.log(localStorage.getItem('shortenedUrls'));
 
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState(
+    JSON.parse(localStorage.getItem('shortenedUrls')) || []
+  );
 
   const [input, setInput] = useState('');
 
@@ -181,7 +184,9 @@ function Shortener() {
           'originalUrl': response.data.url,
           'newUrl': `http://rel.ink/${response.data.hashid}`,
         };
-        setLinks([...links, newLink]);
+        links.push(newLink);
+        setLinks(links);
+        localStorage.setItem('shortenedUrls', JSON.stringify(links));
         setInput('');
       })
       .catch(function (error) {
@@ -191,8 +196,10 @@ function Shortener() {
 
 
   useEffect(() => {
-
+    
   });
+
+  console.log(links);
 
   return (
     <>
@@ -214,18 +221,25 @@ function Shortener() {
             />
             </ShortenerFieldHolder>
             <ShortenerButtonHolder>
-              <ShortenerButton type="submit">Shorten It!</ShortenerButton>
+              <ShortenerButton type="submit" >Shorten It!</ShortenerButton>
             </ShortenerButtonHolder>
           </ShortenerForm>
       </ShortenerHolder>
 
-      {links.map((link, index) => (
+      { 
+      
+
+      links != null &&
+      
+      links.map((link, index) => (
         <ShortenerResult
           key={index}
           originalUrl={link.originalUrl}
           shortenedUrl={link.newUrl}
         />
-      ))}
+      ))
+      }
+  
     </>
   );
 }

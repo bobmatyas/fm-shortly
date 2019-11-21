@@ -90,6 +90,7 @@ const SplashPicture = styled.div`
   }
 
   @media only screen and (min-width: ${DeskTopScreenSize}) { 
+    height: 400px;
     position: absolute;
     right: 0;
     width: 50%;
