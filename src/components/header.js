@@ -10,8 +10,14 @@ const StyledHeader = styled.header`
   color: hsl(260, 8%, 14%);
   display: flex;
   justify-content: space-between;
+  max-width: 1034px;
   padding: 5%;
-  margin: 0 auto;
+
+  @media only screen and (min-width: 1160px) { 
+    margin: 0 auto;
+    padding: 5% 0;
+  }
+
 `;
 
 const LogoHolder = styled.h1`

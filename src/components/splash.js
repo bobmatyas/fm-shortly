@@ -9,11 +9,23 @@ const DeskTopScreenSize = `700px`;
 const SplashHolder = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 5%;
+  padding: 0;
 
   @media only screen and (min-width: ${DeskTopScreenSize}) { 
     flex-direction: row-reverse;
+    justify-content: flex-end;
     margin-bottom: 100px;
+    max-width: 1034px;
+    padding: 0 5%;
+  }
+
+  @media only screen and (min-width: 1150px) {
+    margin: 0 auto 100px auto;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 1200px) { 
+    margin-bottom: 250px;
   }
 `;
 
@@ -43,7 +55,7 @@ const SplashTextHeader = styled.h2`
   }
 
   @media only screen and (min-width: 1100px) {
-    font-size: 7rem;
+    font-size: 5.6rem;
   }
 `;
 
@@ -71,11 +83,14 @@ const SplashPicture = styled.div`
   }
 
   @media only screen and (min-width: ${DeskTopScreenSize}) { 
-    background-size: 115%;
-    background-position: 0 5px;
-    padding-bottom: 100px;
-    height: 600px;
+    position: absolute;
+    right: 0;
     width: 50%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    background-size: 110%;
+    height: 600px;
   }
 
 `;
