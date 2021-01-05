@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://bobmatyas.github.io/fm-shortly",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
